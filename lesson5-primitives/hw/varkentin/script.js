@@ -85,22 +85,24 @@ entBtn.onclick = () => CheckDuplicateLetter(userString.value, userLetter.value)
 contain.append(userString, userLetter, entBtn, rezult)
 
 function CheckDuplicateLetter (string, letter) {
-   let message
-   string = string.toLowerCase(string)
-   letter= string.toLowerCase(letter)
-   let find = string.indexOf(letter, 0)
-   if (find >= 0){
+  string = string.toLowerCase() 
+  letter= letter.toLowerCase()
+
+  let find = string.indexOf(letter)
+
+  if (find >= 0){
         find = string.indexOf(letter, find + 1)
-        if (find >= 0) {
-            rezult.textContent = 'Обнаружено повторение'
-            return true
-            } else {
-            rezult.textContent = 'Повтор не обнаружен'
-            return false
-            } 
-   } else { return rezult.textContent = 'Такой буквы в строке нет'
+       if (find > 0) {
+           rezult.textContent = 'Обнаружено повторение'
+           return true
+           } else {
+           rezult.textContent = 'Повтор не обнаружен'
+           return false
+           } 
+  } else {  return  rezult.textContent = 'Такой буквы в строке нет' 
 }
 }
+
 
 // ex4 Программа укорачивает строку до 20 символов
 
